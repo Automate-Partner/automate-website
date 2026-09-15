@@ -1,0 +1,99 @@
+<style>
+  .logo-marquee {
+    --logo-h-desktop: 60px;
+    --logo-h-mobile: 40px;
+    --fade-w: 80px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 var(--fade-w),
+      #000 calc(100% - var(--fade-w)),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 var(--fade-w),
+      #000 calc(100% - var(--fade-w)),
+      transparent 100%
+    );
+  }
+
+  .logo-marquee__track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: logo-marquee-scroll 30s linear infinite;
+  }
+
+  .logo-marquee:hover .logo-marquee__track {
+    animation-play-state: paused;
+  }
+
+  .logo-marquee__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 32px;
+    flex-shrink: 0;
+  }
+
+  .logo-marquee__item img {
+    height: var(--logo-h-desktop);
+    width: auto;
+    display: block;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+  }
+
+  .logo-marquee__item img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  @keyframes logo-marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .logo-marquee {
+      --fade-w: 40px;
+    }
+    .logo-marquee__item {
+      margin: 0 20px;
+    }
+    .logo-marquee__item img {
+      height: var(--logo-h-mobile);
+    }
+  }
+</style>
+
+<div class="logo-marquee">
+  <div class="logo-marquee__track">
+    <div class="logo-marquee__item"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/danfoss.png" alt="Danfoss"></div>
+    <div class="logo-marquee__item"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/gerresheimer.png" alt="Gerresheimer"></div>
+    <div class="logo-marquee__item"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/novo-nordisk.png" alt="Novo Nordisk"></div>
+    <div class="logo-marquee__item"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/saint-gobain.png" alt="Saint-Gobain"></div>
+    <div class="logo-marquee__item"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/viking-malt.png" alt="Viking Malt"></div>
+    <div class="logo-marquee__item"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/coloplast.png" alt="Coloplast"></div>
+    <div class="logo-marquee__item"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/radiometer.png" alt="Radiometer"></div>
+    <!-- duplicate set for seamless loop -->
+    <div class="logo-marquee__item" aria-hidden="true"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/danfoss.png" alt=""></div>
+    <div class="logo-marquee__item" aria-hidden="true"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/gerresheimer.png" alt=""></div>
+    <div class="logo-marquee__item" aria-hidden="true"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/novo-nordisk.png" alt=""></div>
+    <div class="logo-marquee__item" aria-hidden="true"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/saint-gobain.png" alt=""></div>
+    <div class="logo-marquee__item" aria-hidden="true"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/viking-malt.png" alt=""></div>
+    <div class="logo-marquee__item" aria-hidden="true"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/coloplast.png" alt=""></div>
+    <div class="logo-marquee__item" aria-hidden="true"><img src="https://raw.githubusercontent.com/Automate-Partner/automate-website/main/squarespace/marquee/logos/radiometer.png" alt=""></div>
+  </div>
+</div>
